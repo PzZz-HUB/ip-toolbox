@@ -10,6 +10,15 @@ export function Navbar() {
           IP Toolbox
         </NavLink>
 
+        <nav id="main-nav" className="nav-links" aria-label="主导航">
+          <a 
+            href="https://ip666666.com/" 
+            className="external-link"
+            aria-label="返回 IP 检测网站"
+          >
+            返回 IP 检测 ↗
+          </a>
+        </nav>
       </div>
     </header>
   );
