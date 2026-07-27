@@ -9,7 +9,7 @@ export const keepassxc: Tool = {
   fullDescription: 'KeePassXC 是 KeePass 密码安全保险箱的社区分发版，具有高度的跨平台兼容性，所有密码均离线加密保存在本地，彻底掌控你的数据隐私。',
   highlight: '解决用户多账号密码的本地加密生成、存储与安全管理问题。',
   whyChoose: '数据库完全存储在本地，不依赖云端服务器。适合对数据隐私要求极高，不愿意将密码库托管给任何第三方商业公司的安全敏感型用户。',
-  category: '普通用户',
+  category: "环境与安全",
   audiences: ['普通电脑用户'],
   platforms: ['Windows', 'macOS', 'Linux'],
   officialUrl: 'https://keepassxc.org/',

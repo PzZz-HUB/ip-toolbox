@@ -8,7 +8,7 @@ export const powertoys: Tool = {
   shortDescription: '微软官方出品的 Windows 系统增强工具集',
   fullDescription: '详细评测与深度解析请见下方专栏。',
   highlight: '解决 Windows 原生系统在窗口管理、文件预览等细节功能上的缺失。',
-  category: '普通用户',
+  category: "极客与基建",
   audiences: ['普通电脑用户'],
   platforms: ['Windows'],
   officialUrl: 'https://learn.microsoft.com/windows/powertoys/',

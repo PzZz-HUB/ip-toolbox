@@ -8,7 +8,7 @@ export const rustdesk: Tool = {
   shortDescription: '开源且安全的虚拟桌面及远程控制软件',
   fullDescription: '详细评测与深度解析请见下方专栏。',
   highlight: '解决跨地域设备的远程桌面控制与文件管理需求。',
-  category: '普通用户',
+  category: "远程与运维",
   audiences: ['普通电脑用户'],
   platforms: ['Windows', 'macOS', 'Linux', 'Android', 'iOS'],
   officialUrl: 'https://rustdesk.com/',

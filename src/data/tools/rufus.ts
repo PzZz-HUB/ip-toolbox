@@ -11,7 +11,7 @@ export const rufus: Tool = {
   whyChoose: '代码开源且不捆绑恶意软件。相比于市面上繁杂的商业 PE 工具，它只做将镜像写入 U 盘这一件事，确保你安装出的系统干净无后门。',
   keywords: ['u盘', '启动盘', '系统盘', 'pe', '装机', '重装系统'],
   tags: ['免费开源', '极速纯净', '单文件便携'],
-  category: '普通用户',
+  category: "极客与基建",
   audiences: ['普通电脑用户'],
   platforms: ['Windows'],
   officialUrl: 'https://rufus.ie/',

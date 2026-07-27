@@ -9,7 +9,7 @@ export const mpv: Tool = {
   fullDescription: 'MPV 是一款免费、开源、跨平台的纯粹媒体播放器。它没有传统的臃肿界面，依靠强大的命令行配置与极高品质的视频输出渲染而备受极客群体推崇。',
   highlight: '解决视频播放器占用系统资源过高以及画质渲染上限不足的问题。',
   whyChoose: '没有传统多余的图形界面，高度依赖键盘快捷键和配置文件。适合有一定技术基础，追求极低资源消耗或需要自定义渲染算法的进阶用户。',
-  category: '普通用户',
+  category: "极客与基建",
   audiences: ['普通电脑用户'],
   platforms: ['Windows', 'macOS', 'Linux'],
   officialUrl: 'https://mpv.io/',

@@ -9,7 +9,7 @@ export const localsend: Tool = {
   fullDescription: 'LocalSend 是一个免费、开源的跨平台应用，支持在无外网环境下通过局域网安全互传文件和文本。',
   highlight: '解决跨不同操作系统、不同品牌设备间的局域网文件互传问题。',
   whyChoose: '无需连接互联网即可完成端到端加密传输。相比云盘中转或通讯软件传文件，它没有大小限制，速度仅受限于你的路由器内网带宽。',
-  category: '普通用户',
+  category: "极客与基建",
   audiences: ['普通电脑用户'],
   platforms: ['Windows', 'macOS', 'Linux'],
   license: 'MIT',

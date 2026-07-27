@@ -33,8 +33,7 @@ export type Category =
   | "AI 生产力"
   | "内容与创作"
   | "远程与运维"
-  | "极客与基建"
-  | "普通用户";
+  | "极客与基建";
 
 export type Audience =
   | "跨境用户"

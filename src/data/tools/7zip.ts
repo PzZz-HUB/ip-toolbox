@@ -11,7 +11,7 @@ export const sevenZip: Tool = {
   whyChoose: '界面虽然老旧，但完全没有弹窗广告，且提供行业标准级别的压缩率。适合追求软件纯粹功能、不需要花哨界面的传统电脑用户。',
   keywords: ['解压', '压缩', 'rar', 'zip', '7z'],
   tags: ['免费无广', '高压缩比', '装机必备'],
-  category: '普通用户',
+  category: "极客与基建",
   audiences: ['普通电脑用户'],
   platforms: ['Windows'],
   officialUrl: 'https://www.7-zip.org/',
