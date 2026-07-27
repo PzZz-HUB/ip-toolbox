@@ -26,7 +26,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
       </p>
 
       <div className="card-highlight" style={{ visibility: tool.highlight ? 'visible' : 'hidden' }}>
-        {tool.highlight ? `💡 ${tool.highlight.length > 35 ? tool.highlight.substring(0, 35) + '...' : tool.highlight}` : ''}
+        {tool.highlight ? `💡 ${tool.highlight}` : ''}
       </div>
 
       <div className="card-platform">
