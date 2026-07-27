@@ -1,0 +1,87 @@
+name: 💡 推荐开源/出海新工具
+description: 推荐一款符合“极致纯净”理念的开源/官方软件收录至百宝箱
+title: "[推荐]: <工具名称>"
+labels: ["tool-recommendation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您为“出海开源百宝箱”贡献纯净火力！为了加快收录速度，请确保您推荐的工具符合我们的**极客精神与绝对纯净**的底线。
+  
+  - type: input
+    id: tool_name
+    attributes:
+      label: 工具名称
+      placeholder: 例如：Brave Browser, Tailscale, RustDesk...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 目标分类 (Category)
+      description: 您认为这款工具应该被归类到哪个板块？
+      options:
+        - 🌐 网络与代理
+        - 🛡️ 环境与安全
+        - 🤖 AI 生产力
+        - 🎬 内容与创作
+        - 💻 远程与运维
+        - 🛠️ 极客与基建
+    validations:
+      required: true
+
+  - type: input
+    id: short_description
+    attributes:
+      label: 一句话简介 (Short Description)
+      description: 展现在首页卡片上的描述（建议 1-2 句话，突出核心痛点）。
+      placeholder: 例如：极简且极其强大的零配置异地组网工具（基于 WireGuard）。
+    validations:
+      required: true
+
+  - type: input
+    id: official_url
+    attributes:
+      label: 官方网站 (Official URL)
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: input
+    id: github_repo
+    attributes:
+      label: GitHub 仓库地址 (可选)
+      description: 如果是托管在 GitHub 上的开源项目，请提供仓库地址。
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: false
+
+  - type: dropdown
+    id: license_status
+    attributes:
+      label: 开源与安全校验 (License & Security)
+      description: 请如实说明该工具的开源状态，这关系到使用者的资产安全。
+      options:
+        - 🟢 100% 纯净开源 (如 MIT, GPL, Apache 等)
+        - 🟡 混合开源 (客户端开源，服务端闭源控制权)
+        - 🔵 免费的官方商业闭源软件 (不含任何流氓行为)
+    validations:
+      required: true
+
+  - type: textarea
+    id: deep_review
+    attributes:
+      label: 深度评测与安全预警 (Deep Review / Security Notes)
+      description: |
+        您可以在这里直接撰写 Markdown 格式的长篇测评。
+        如果您上方选择了“混合开源”或“闭源”，请务必在这里写下**潜在风险预警**。
+        这部分内容将被原封不动地转换为您专属的评测文章（.md 文件）并挂载在网站的详情页中！
+      placeholder: |
+        ## 使用体验
+        这是我用过最稳定的...
+        
+        ## ⚠️ 风险提示
+        注意，它的服务端不是开源的，重度敏感场景请考虑...
+    validations:
+      required: true
