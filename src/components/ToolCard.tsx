@@ -17,6 +17,11 @@ export function ToolCard({ tool }: { tool: Tool }) {
       <div className="card-header">
         <ToolIcon iconData={tool.icon} />
         <div className="card-title">{tool.name}</div>
+        {tool.githubStars != null && (
+          <div className="tag" style={{ marginLeft: 'auto', background: 'var(--bg-secondary)', color: 'var(--text-secondary)', border: '1px solid var(--border-color)', fontSize: '0.75rem', padding: '0.15rem 0.4rem', fontWeight: 600 }}>
+            <span style={{ color: '#e3b341', marginRight: '0.2rem' }}>★</span>{formatStars(tool.githubStars)}
+          </div>
+        )}
       </div>
       <p className="card-desc">
         {tool.shortDescription}
@@ -35,11 +40,6 @@ export function ToolCard({ tool }: { tool: Tool }) {
 
       <div className="card-platform">
         {tool.platforms.map(p => <span key={p} className="tag" style={{ background: 'transparent' }}>{p}</span>)}
-        {tool.githubStars != null && (
-          <span className="tag" style={{ marginLeft: 'auto', background: 'transparent' }}>
-            GitHub ★ {formatStars(tool.githubStars)}
-          </span>
-        )}
       </div>
       
       <Link to={`/${tool.slug}`} className="btn btn-outline" style={{ display: 'block', width: '100%', marginTop: 'auto' }}>
