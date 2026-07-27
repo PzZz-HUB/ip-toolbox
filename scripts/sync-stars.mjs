@@ -4,54 +4,57 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const TOOLS_FILE = path.join(__dirname, '../src/data/tools.ts');
+const TOOLS_DIR = path.join(__dirname, '../src/data/tools');
 
 async function syncStars() {
-  console.log('Starting GitHub Stars sync...');
-  let content = fs.readFileSync(TOOLS_FILE, 'utf-8');
-  
-  // Extract all githubOwner and githubRepo pairs using regex
-  const regex = /githubOwner:\s*'([^']+)',\s*githubRepo:\s*'([^']+)'/g;
-  let match;
-  const updates = [];
-
-  while ((match = regex.exec(content)) !== null) {
-    updates.push({
-      owner: match[1],
-      repo: match[2],
-      index: match.index
-    });
-  }
-
+  console.log('Starting V3 GitHub Stars sync...');
+  const files = fs.readdirSync(TOOLS_DIR).filter(f => f.endsWith('.ts') && f !== 'index.ts');
   const now = new Date().toISOString().split('T')[0];
+  let updatedCount = 0;
 
-  for (const { owner, repo } of updates) {
-    console.log(`Fetching stars for ${owner}/${repo}...`);
-    try {
-      const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
-        headers: {
-          'User-Agent': 'IP-Toolbox-Sync-Script',
-          ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {})
+  for (const file of files) {
+    const filePath = path.join(TOOLS_DIR, file);
+    let content = fs.readFileSync(filePath, 'utf-8');
+
+    const ownerMatch = content.match(/githubOwner:\s*'([^']+)'/);
+    const repoMatch = content.match(/githubRepo:\s*'([^']+)'/);
+
+    if (ownerMatch && repoMatch) {
+      const owner = ownerMatch[1];
+      const repo = repoMatch[1];
+      
+      console.log(`Fetching stars for ${owner}/${repo} (${file})...`);
+      try {
+        const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
+          headers: {
+            'User-Agent': 'IP-Toolbox-Sync-Script',
+            ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {})
+          }
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          const stars = data.stargazers_count;
+          console.log(` -> ${stars} stars found.`);
+
+          content = content.replace(/githubStars:\s*[^,]+,/, `githubStars: ${stars},`);
+          content = content.replace(/starsUpdatedAt:\s*[^,]+,/, `starsUpdatedAt: '${now}',`);
+
+          fs.writeFileSync(filePath, content, 'utf-8');
+          updatedCount++;
+        } else {
+          console.log(` -> Failed to fetch (${res.status} ${res.statusText}).`);
         }
-      });
-      if (res.ok) {
-        const data = await res.json();
-        const stars = data.stargazers_count;
-        console.log(` -> ${stars} stars found.`);
-
-        // Create a specific regex to replace stars for this repo block
-        const blockRegex = new RegExp(`(githubOwner:\\s*'${owner}',\\s*githubRepo:\\s*'${repo}',\\s*githubStars:\\s*)[^,]+(,\\s*starsUpdatedAt:\\s*)[^,]+(,)`, 'g');
-        content = content.replace(blockRegex, `$1${stars}$2'${now}'$3`);
-      } else {
-        console.log(` -> Failed to fetch (${res.status} ${res.statusText}). Skipping.`);
+      } catch (err) {
+        console.log(` -> Error fetching ${owner}/${repo}: ${err.message}.`);
       }
-    } catch (err) {
-      console.log(` -> Error fetching ${owner}/${repo}: ${err.message}. Skipping.`);
+      
+      // 节流处理，防止频繁调用触发 GitHub 限制
+      await new Promise(r => setTimeout(r, 600));
     }
   }
 
-  fs.writeFileSync(TOOLS_FILE, content, 'utf-8');
-  console.log('GitHub Stars sync completed.');
+  console.log(`GitHub Stars sync completed. Updated ${updatedCount} tools.`);
 }
 
 syncStars();

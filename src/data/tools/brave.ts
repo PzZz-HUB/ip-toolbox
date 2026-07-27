@@ -22,8 +22,8 @@ export const braveTool: Tool = {
   githubRepo: 'brave-browser',
   
   license: 'MPL 2.0 (核心全开源)',
-  githubStars: null, // 按需渲染测试：虽然有 Github 仓库，但在官方主要分发，测试置空
-  starsUpdatedAt: null,
+  githubStars: 23190, // 按需渲染测试：虽然有 Github 仓库，但在官方主要分发，测试置空
+  starsUpdatedAt: '2026-07-27',
   
   securityNotes: 'Brave 是一款高度信赖的开源浏览器。请务必从官方网站下载，切勿使用第三方修改版或绿化版，以防底层隐私保护机制被恶意篡改或注入后门。',
   

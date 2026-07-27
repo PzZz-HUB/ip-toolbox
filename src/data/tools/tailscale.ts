@@ -22,8 +22,8 @@ export const tailscaleTool: Tool = {
   githubRepo: 'tailscale',
   
   license: '混合开源 (客户端开源 / 服务端闭源)',
-  githubStars: 15300, 
-  starsUpdatedAt: '2026-07-27T00:00:00Z',
+  githubStars: 34393, 
+  starsUpdatedAt: '2026-07-27',
   
   // 详细安全警告已剥离至 src/content/tools/tailscale.md
   securityNotes: '请务必通过官方渠道或认证的包管理器安装。如需了解混合开源相关的中心化节点控制风险，请参阅下方深度解析。',
