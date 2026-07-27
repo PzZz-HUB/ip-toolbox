@@ -9,7 +9,7 @@ export const sharex: Tool = {
   fullDescription: 'ShareX 是一款适用于 Windows 的免费开源工具，不仅支持截图、录屏，还集成了取色器、图像编辑器、二维码生成以及几十种文件上传服务的自动同步。',
   highlight: '解决复杂工作流中的屏幕截图、录制以及后续自动化处理需求。',
   whyChoose: '不仅是截图工具，它支持截图后自动添加注释、上传服务器并生成链接。适合需要高频截取和分享屏幕内容、注重工作流自动化的办公人群。',
-  category: "极客与基建",
+  category: '普通用户',
   audiences: ['普通电脑用户'],
   platforms: ['Windows'],
   officialUrl: 'https://getsharex.com/',

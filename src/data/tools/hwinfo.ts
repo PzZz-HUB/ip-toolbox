@@ -9,7 +9,7 @@ export const hwinfo: Tool = {
   fullDescription: 'HWiNFO 是全面的硬件分析、监控与报告工具。它可以深入识别几乎所有的硬件规格，并实时监控电压、温度、风扇转速等数百项传感器数据。',
   highlight: '解决识别复杂电脑硬件配置以及实时监控各项传感器温度电压的问题。',
   whyChoose: '能提供比系统任务管理器丰富数倍的硬件参数细节。适合需要对电脑进行硬件维护、排查系统异常重启和蓝屏原因的电脑技术人员。',
-  category: "极客与基建",
+  category: '普通用户',
   audiences: ['普通电脑用户'],
   platforms: ['Windows'],
   officialUrl: 'https://www.hwinfo.com/',

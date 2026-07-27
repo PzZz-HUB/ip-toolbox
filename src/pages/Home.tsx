@@ -11,7 +11,8 @@ const CATEGORIES = [
   { label: '🤖 AI 生产力', value: 'AI 生产力' },
   { label: '🎬 内容与创作', value: '内容与创作' },
   { label: '💻 远程与运维', value: '远程与运维' },
-  { label: '🛠️ 极客与基建', value: '极客与基建' }
+  { label: '🛠️ 极客与基建', value: '极客与基建' },
+  { label: '🧑‍💻 普通用户', value: '普通用户' }
 ] as const;
 
 export function Home() {

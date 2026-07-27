@@ -9,7 +9,7 @@ export const handbrake: Tool = {
   fullDescription: 'HandBrake 是免费的视频转码器，支持几乎所有常见的视频格式压缩、格式转换和体积精简。',
   highlight: '解决视频体积过大、格式不兼容以及在不同设备间的硬转码问题。',
   whyChoose: '内置针对各种设备优化的转码预设参数，并支持批量处理。适合需要将原片压缩体积、调整分辨率以适应网页上传或移动设备播放的创作者。',
-  category: "极客与基建",
+  category: '普通用户',
   audiences: ['内容创作者', '普通电脑用户'],
   platforms: ['Windows', 'macOS', 'Linux'],
   license: 'GPL-2.0',

@@ -11,7 +11,7 @@ export const braveTool: Tool = {
   keywords: ['浏览器', '隐私', '去广告', '指纹', '防追踪', '跨境', 'browser'],
   tags: ['极致隐私', 'Chromium内核', '自带去广告'],
   
-  category: '环境与安全',
+  category: '普通用户',
   audiences: ['跨境用户', '普通电脑用户', '开发者'],
   
   platforms: ['Windows', 'macOS', 'Linux', 'Android', 'iOS'],

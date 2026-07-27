@@ -11,7 +11,7 @@ export const bitwarden: Tool = {
   whyChoose: '采用端到端加密的云同步机制，官方基础服务免费。适合需要在手机、电脑和不同浏览器间频繁切换，注重便利性与云端安全平衡的用户。',
   keywords: ['密码', '安全', '1password', '管理', '加密'],
   tags: ['免费开源', '多端同步', '端到端加密'],
-  category: "环境与安全",
+  category: '普通用户',
   audiences: ['普通电脑用户', '开发者'],
   platforms: ['Windows', 'macOS', 'Linux'],
   officialUrl: 'https://bitwarden.com/',
