@@ -9,6 +9,8 @@ export function ToolCard({ tool }: { tool: Tool }) {
     return stars.toString();
   };
 
+  const visibleAudiences = tool.audiences.slice(0, 2);
+  const hiddenCount = tool.audiences.length - 2;
 
   return (
     <div className="card">
@@ -27,6 +29,13 @@ export function ToolCard({ tool }: { tool: Tool }) {
 
       <div className="card-highlight" style={{ visibility: tool.highlight ? 'visible' : 'hidden' }}>
         {tool.highlight ? `💡 ${tool.highlight.length > 35 ? tool.highlight.substring(0, 35) + '...' : tool.highlight}` : ''}
+      </div>
+
+      
+      <div className="card-audience">
+        <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)', marginRight: '0.25rem' }}>适合:</span>
+        {visibleAudiences.map(a => <span key={a} className="tag">{a}</span>)}
+        {hiddenCount > 0 && <span className="tag">+{hiddenCount}</span>}
       </div>
 
       <div className="card-platform">
